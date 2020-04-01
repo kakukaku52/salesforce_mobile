@@ -1,0 +1,13 @@
+select DeveloperName,id from RecordType where SobjectType = 'ClaimDetail__c'
+
+select id,recordtypeid from claim__c where createddate >= 2020-02-25T00:00:00.000+0000 and recordtypeid = '0120w0000007Iu8AAE'
+
+
+List<Claim__c> claims = [select id from Claim__c where createddate >= 2020-03-09T00:00:00.000+0000 ];
+delete claims;
+
+List<Formd__c> formds = [select id from Formd__c where createddate >= 2020-03-08T00:00:00.000+0000 ];
+delete formds;
+
+List<ClaimDetail__c> claimdetails = [select id from ClaimDetail__c where createddate >= 2020-03-08T00:00:00.000+0000 ];
+delete claimdetails;
